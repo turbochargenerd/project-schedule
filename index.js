@@ -2,10 +2,10 @@
 
 // Months Current Month not commented out 
 const months = [
-  // { name: 'January', days: 31, range: { start: new Date(2024, 0, 1), end: new Date(2024, 0, 31) } },
-  // { name: 'February', days: 28, range: { start: new Date(2024, 1, 1), end: new Date(2024, 1, 28) } },
+  { name: 'January', days: 31, range: { start: new Date(2024, 0, 1), end: new Date(2024, 0, 31) } },
+  { name: 'February', days: 28, range: { start: new Date(2024, 1, 1), end: new Date(2024, 1, 28) } },
   { name: 'March', days: 31, range: { start: new Date(2024, 2, 1), end: new Date(2024, 2, 31) } },
-  /* { name: 'April', days: 30, range: { start: new Date(2024, 3, 1), end: new Date(2024, 3, 30) } },
+  { name: 'April', days: 30, range: { start: new Date(2024, 3, 1), end: new Date(2024, 3, 30) } },
   { name: 'May', days: 31, range: { start: new Date(2024, 4, 1), end: new Date(2024, 4, 31) } },
   { name: 'June', days: 30, range: { start: new Date(2024, 5, 1), end: new Date(2024, 5, 30) } },
   { name: 'July', days: 31, range: { start: new Date(2024, 6, 1), end: new Date(2024, 6, 31) } },
@@ -13,7 +13,7 @@ const months = [
   { name: 'September', days: 30, range: { start: new Date(2024, 8, 1), end: new Date(2024, 8, 30) } },
   { name: 'October', days: 31, range: { start: new Date(2024, 9, 1), end: new Date(2024, 9, 31) } },
   { name: 'November', days: 30, range: { start: new Date(2024, 10, 1), end: new Date(2024, 10, 30) } },
-  { name: 'December', days: 31, range: { start: new Date(2024, 11, 1), end: new Date(2024, 11, 31) } } */
+  { name: 'December', days: 31, range: { start: new Date(2024, 11, 1), end: new Date(2024, 11, 31) } }
 ];
 
 // Types of Projects with weights
