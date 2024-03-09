@@ -1,8 +1,8 @@
 
 // Months 
 const months = [
-    { name: 'January', days: 31, range: { start: new Date(2024, 0, 1), end: new Date(2024, 0, 31) } },
-    { name: 'February', days: 28, range: { start: new Date(2024, 1, 1), end: new Date(2024, 1, 28) } },
+   // { name: 'January', days: 31, range: { start: new Date(2024, 0, 1), end: new Date(2024, 0, 31) } },
+   // { name: 'February', days: 28, range: { start: new Date(2024, 1, 1), end: new Date(2024, 1, 28) } },
     { name: 'March', days: 31, range: { start: new Date(2024, 2, 1), end: new Date(2024, 2, 31) } },
     { name: 'April', days: 30, range: { start: new Date(2024, 3, 1), end: new Date(2024, 3, 30) } },
     { name: 'May', days: 31, range: { start: new Date(2024, 4, 1), end: new Date(2024, 4, 31) } },
@@ -21,14 +21,25 @@ const months = [
     console.log(`Range: ${month.range.start.toDateString()} - ${month.range.end.toDateString()}`);
   });
 
-  const projects = [
+  // Types of Projects
+  const project = [
     { name: 'Japanese'},
     { name: 'Coding'},
     { name: 'Nursing'},
-    { name: 'freeday'}
+    { name: 'Freeday'}
   ];
 
-  projects.forEach(project => {
-    console.log(`Today's project is ${project.name}`)
-  });
+  // Pick Day of Week
+  for (let i = 0; i < months.length; i++) {
+    console.log(`${months[i].name}:`);
+    console.log('');
+    console.log('----------------------');
+  }
+
+  // Pick Project 
+  for (let day = 1; day <= months[i].days; day++) {
+    console.log(`${day}`);
+    const randomIndex = Math.floor(Math.random() * project.length);
+    const randomProject = project[randomIndex];
+    console.log(`Random project: ${randomProject.name}`);
   
