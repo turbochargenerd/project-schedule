@@ -1,45 +1,43 @@
-
 // Months 
 const months = [
-   // { name: 'January', days: 31, range: { start: new Date(2024, 0, 1), end: new Date(2024, 0, 31) } },
-   // { name: 'February', days: 28, range: { start: new Date(2024, 1, 1), end: new Date(2024, 1, 28) } },
-    { name: 'March', days: 31, range: { start: new Date(2024, 2, 1), end: new Date(2024, 2, 31) } },
-    { name: 'April', days: 30, range: { start: new Date(2024, 3, 1), end: new Date(2024, 3, 30) } },
-    { name: 'May', days: 31, range: { start: new Date(2024, 4, 1), end: new Date(2024, 4, 31) } },
-    { name: 'June', days: 30, range: { start: new Date(2024, 5, 1), end: new Date(2024, 5, 30) } },
-    { name: 'July', days: 31, range: { start: new Date(2024, 6, 1), end: new Date(2024, 6, 31) } },
-    { name: 'August', days: 31, range: { start: new Date(2024, 7, 1), end: new Date(2024, 7, 31) } },
-    { name: 'September', days: 30, range: { start: new Date(2024, 8, 1), end: new Date(2024, 8, 30) } },
-    { name: 'October', days: 31, range: { start: new Date(2024, 9, 1), end: new Date(2024, 9, 31) } },
-    { name: 'November', days: 30, range: { start: new Date(2024, 10, 1), end: new Date(2024, 10, 30) } },
-    { name: 'December', days: 31, range: { start: new Date(2024, 11, 1), end: new Date(2024, 11, 31) } }
-  ];
+  // { name: 'January', days: 31, range: { start: new Date(2024, 0, 1), end: new Date(2024, 0, 31) } },
+  // { name: 'February', days: 28, range: { start: new Date(2024, 1, 1), end: new Date(2024, 1, 28) } },
+  { name: 'March', days: 31, range: { start: new Date(2024, 2, 1), end: new Date(2024, 2, 31) } },
+  /* { name: 'April', days: 30, range: { start: new Date(2024, 3, 1), end: new Date(2024, 3, 30) } },
+  { name: 'May', days: 31, range: { start: new Date(2024, 4, 1), end: new Date(2024, 4, 31) } },
+  { name: 'June', days: 30, range: { start: new Date(2024, 5, 1), end: new Date(2024, 5, 30) } },
+  { name: 'July', days: 31, range: { start: new Date(2024, 6, 1), end: new Date(2024, 6, 31) } },
+  { name: 'August', days: 31, range: { start: new Date(2024, 7, 1), end: new Date(2024, 7, 31) } },
+  { name: 'September', days: 30, range: { start: new Date(2024, 8, 1), end: new Date(2024, 8, 30) } },
+  { name: 'October', days: 31, range: { start: new Date(2024, 9, 1), end: new Date(2024, 9, 31) } },
+  { name: 'November', days: 30, range: { start: new Date(2024, 10, 1), end: new Date(2024, 10, 30) } },
+  { name: 'December', days: 31, range: { start: new Date(2024, 11, 1), end: new Date(2024, 11, 31) } } */
+];
 
-// Testing
-  months.forEach(month => {
-    console.log(`${month.name} has ${month.days} days.`);
-    console.log(`Range: ${month.range.start.toDateString()} - ${month.range.end.toDateString()}`);
-  });
+// Types of Projects with weights
+const projects = [
+  { name: 'Japanese', weight: 3 },
+  { name: 'Coding', weight: 2 },
+  { name: 'Nursing', weight: 1 },
+  { name: 'Freeday', weight: 4 }
+];
 
-  // Types of Projects
-  const project = [
-    { name: 'Japanese'},
-    { name: 'Coding'},
-    { name: 'Nursing'},
-    { name: 'Freeday'}
-  ];
-
-  // Pick Day of Week
-  for (let i = 0; i < months.length; i++) {
-    console.log(`${months[i].name}:`);
-    console.log('');
-    console.log('----------------------');
+// Assign random project to each day of the week for each month
+months.forEach(month => {
+  console.log(`${month.name}:`);
+  let previousProject;
+  for (let day = 1; day <= month.days; day++) {
+    let totalWeight = projects.reduce((acc, project) => acc + project.weight, 0);
+    let selectedProject;
+    do {
+      let randomNum = Math.floor(Math.random() * totalWeight);
+      selectedProject = projects.find(project => randomNum < project.weight);
+    } while (!selectedProject || (selectedProject === previousProject && selectedProject.name !== 'Nursing'));
+    previousProject = selectedProject;
+    console.log(`Day ${day}: ${selectedProject.name}`);
+    if (day % 7 === 0 && day !== month.days) {
+      console.log('--- Break ---');
+    }
   }
-
-  // Pick Project 
-  for (let day = 1; day <= months[i].days; day++) {
-    console.log(`${day}`);
-    const randomIndex = Math.floor(Math.random() * project.length);
-    const randomProject = project[randomIndex];
-    console.log(`Random project: ${randomProject.name}`);
-  
+  console.log('');
+});
