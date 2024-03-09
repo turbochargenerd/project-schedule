@@ -1,4 +1,4 @@
-// prompt 
+// prompt
 
 // Months 
 const months = [
@@ -26,7 +26,7 @@ const projects = [
 ];
 
 // Assign random project to each day of the week for each month
-/* months.forEach(month => {
+months.forEach(month => {
   console.log(`${month.name}:`);
   let previousProject;
   for (let day = 1; day <= month.days; day++) {
@@ -46,4 +46,4 @@ const projects = [
     }
   }
   console.log('');
-}); */
+});
